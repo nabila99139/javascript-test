@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+        <div class="card p-3" id="illustration-3d-container"></div>
+
+        <!-- 3D Renderer -->
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+                    "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/",
+                    "three-mesh-bvh": "https://unpkg.com/three-mesh-bvh@0.7.4/build/index.module.js",
+                    "three-bvh-csg": "https://unpkg.com/three-bvh-csg@0.0.16/build/index.module.js"
+                }
+            }
+        </script>
+        <script>
+            var secure_asset = "{{ secure_asset('/') }}"
+        </script>
+        <script type="module" src="js/illustration/illustration-three.js"></script>
+    </body>
+</html>
