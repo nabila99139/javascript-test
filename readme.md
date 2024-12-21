@@ -13,5 +13,10 @@
 
 ### Expected Result
 
+#### Simply Supported Analysis
 ![Bending Moment Plot](images/bending-moment-plot.png)
 ![Shear Force Plot](images/shear-force-plot.png)
+
+#### Two Span Unequal Analysis
+![Bending Moment Plot](images/two-span-unequal-bending-plot.png)
+![Shear Force Plot](images/two-span-unequal-shear-plot.png)
