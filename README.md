@@ -13,4 +13,4 @@
 
 ### Expected Result
 
-![Expected Result](images/expected-result.png)
+![Expected Result](images/expected-result.jpg)
