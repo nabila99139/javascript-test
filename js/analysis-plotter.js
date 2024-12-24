@@ -1,19 +1,37 @@
-'use strict';
-
-/**
- * Plot result from the beam analysis calculation into a graph
- */
 class AnalysisPlotter {
-    constructor(container) {
-        this.container = container;
+    constructor(plotId) {
+      this.plotId = plotId;
     }
-
-    /**
-     * Plot equation.
-     *
-     * @param {Object{beam : Beam, load : float, equation: Function}}  The equation data
-     */
-    plot(data) {
-        console.log('Plotting data : ', data);
+  
+    plot(data, title) {
+      const ctx = document.getElementById(this.plotId).getContext("2d");
+      const chartData = {
+        labels: data.map((point) => point.x.toFixed(2)),
+        datasets: [
+          {
+            label: title,
+            data: data.map((point) => point.y),
+            borderColor: "blue",
+            fill: false,
+          },
+        ],
+      };
+  
+      new Chart(ctx, {
+        type: "line",
+        data: chartData,
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              title: { display: true, text: "Distance (m)" },
+            },
+            y: {
+              title: { display: true, text: "Shear Force (kN)" },
+            },
+          },
+        },
+      });
     }
-}
+  }
+  
