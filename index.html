@@ -9,8 +9,16 @@
 </head>
 
 <body>
-    <!-- PLEASE REFRESH PAGE IF YOU WANT TO CHANGE CONDITION  thank you :) ! ! ! -->
+    <!-- PLEASE REFRESH PAGE IF YOU WANT TO CHANGE CONDITION,  thank you ! ! ! -->
     <!-- I use CDN, so please connect to wifi or data to accsess bootstrap and other library -->
+
+    <!--  ****
+        Note :
+        I've check the formula for twoSpanUnequal, deflection
+        and couldn't find the exact answer for the chart,
+        even tho i think i've use the correct condition and formula
+    **** -->
+    
     <div class="container-fluid">
         <div class="d-flex flex-column border-1 p-3 m-3 gap-3">
             <div class="d-flex justify-content-center fw-bold h4">Beam Analysis TEST</div>
@@ -89,6 +97,7 @@
         const L2 = parseFloat(document.getElementById("secondarySpan").value) || null;
         const EI = parseFloat(document.getElementById("EI").value);
         const w = parseFloat(document.getElementById("w").value);
+        const j2 = parseFloat(document.getElementById("j2").value);
         const condition = document.getElementById("condition").value;
 
         // const beam = new Beam(L1, L2,
@@ -106,9 +115,10 @@
 
         // beam-analysis.js
         const beamAnalysis = new BeamAnalysis();
-        const shearForceData = beamAnalysis.getShearForce(beam, w, condition);
-        const bendingMomentData = beamAnalysis.getBendingMoment(beam, w, condition);
-        const deflectionData = beamAnalysis.getDeflection(beam, w, condition);
+        const shearForceData = beamAnalysis.getShearForce(beam, w, condition, j2);
+        const bendingMomentData = beamAnalysis.getBendingMoment(beam, w, condition, j2);
+        const deflectionData = beamAnalysis.getDeflection(beam, w, condition, j2);
+
 
         console.log("Deflection Data:", deflectionData);
 
